@@ -24,14 +24,15 @@ function App() {
     >
       <ReactMapGl
         {...viewport}
-        mapboxAccessToken={TOKEN}
+        mapboxApiAccessToken={TOKEN}
         width="100%"
         height="100%"
-        transitionDuration="200"
-        onViewportChange={handleViewportChange}
-        interactive={true} // enable left-click dragging
-        dragPan={true}
+        onViewportChange={setViewport}
+        interactive={true}
+        onDrag={handleViewportChange}
         scrollZoom={true}
+        dragPan={true} // enable dragging
+        dragRotate={false} // disable rotation
         mapStyle="mapbox://styles/joffdamido/clhb0yvqr012801pg7snja9cz"
       >
         <>
